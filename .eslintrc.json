@@ -23,8 +23,8 @@
         ],
         "indent": ["error", 4],
         "object-curly-newline": ["error", {
-            "ObjectExpression": { "multiline": true },
-            "ObjectPattern": { "multiline": true },
+            "ObjectExpression": { "consistent": true },
+            "ObjectPattern": { "multiline": true, "minProperties": 0 },
             "ImportDeclaration": "never",
             "ExportDeclaration": "always"
         }]

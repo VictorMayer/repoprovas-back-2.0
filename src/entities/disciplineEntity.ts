@@ -1,5 +1,6 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, OneToMany } from 'typeorm';
 import PeriodEntity from './periodEntity';
+import ExamEntity from './examEntity';
 
 @Entity('disciplines')
 export default class DisciplineEntity {
@@ -16,5 +17,6 @@ export default class DisciplineEntity {
     @JoinColumn({ name: 'periodId' })
         period: PeriodEntity;
 
-    // Definir relação ManyToMany
+    @OneToMany(() => ExamEntity, (exams) => exams.discipline)
+        exams: ExamEntity[];
 }

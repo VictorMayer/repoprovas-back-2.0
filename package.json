@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "npx nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node src/server.ts\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "typeorm": "ts-node ./node_modules/typeorm/cli",
+    "dev": "NODE_ENV=dev npx nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node src/server.ts\"",
+    "build": "NODE_ENV=dev npx tsc --outDir dist",
+    "test": "NODE_ENV=test npx jest -i"
   },
   "keywords": [],
   "author": "",
